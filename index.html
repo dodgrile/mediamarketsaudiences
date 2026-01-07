@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Truth - Backstabbers Geocaching Campaign</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c5530 0%, #1a1a1a 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #4a7c4e;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 1rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4a7c4e;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+        
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        
+        .instructions {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #4a7c4e;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: #3a6c3e;
+        }
+        
+        /* Custom marker styling */
+        .custom-marker {
+            background: #4a7c4e;
+            border: 3px solid #2c5530;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌲 Find the Truth on Bones Hollow Trail 🌲</h1>
+        <p class="tagline">12 evidence boxes hidden across UK hiking trails</p>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">127</div>
+                <div class="stat-label">Boxes Found</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Active Locations</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Days Until Launch</div>
+            </div>
+        </div>
+    </header>
+    
+    <div id="map"></div>
+    
+    <div class="instructions">
+        <h2>How to Participate</h2>
+        <ol>
+            <li>Choose a location from the map above</li>
+            <li>Follow the coordinates to find the hidden evidence box</li>
+            <li>Open the box and discover clues from Bones Hollow Trail</li>
+            <li>Sign the logbook and share your find with #FindBackstabbers</li>
+            <li>The first 100 finders receive a signed bookplate</li>
+        </ol>
+        
+        <p><strong>Rules:</strong> Leave no trace. Return items to the box. Respect the environment.</p>
+        
+        <a href="#" class="cta-button">Pre-Order Backstabbers</a>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

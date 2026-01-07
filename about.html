@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Backstabbers Geocaching Campaign</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: #0d0d0d;
+            color: #ffffff;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #1a1a1a;
+            padding: 1rem 2rem;
+            border-bottom: 2px solid #2c5530;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4a7c4e;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4a7c4e;
+        }
+        
+        .nav-links .active {
+            color: #4a7c4e;
+            border-bottom: 2px solid #4a7c4e;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #2c5530 0%, #0d0d0d 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid #4a7c4e;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Content sections */
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: #4a7c4e;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #4a7c4e;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content-section h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+        
+        /* Book details grid */
+        .book-details {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #1a1a1a;
+            border-radius: 8px;
+            border: 1px solid #2c5530;
+        }
+        
+        .book-cover-large {
+            width: 250px;
+            height: 375px;
+            background: #2c2c2c;
+            border: 3px solid #4a7c4e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #888;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .book-info h3 {
+            margin-top: 0;
+        }
+        
+        .book-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .meta-item {
+            background: rgba(74, 124, 78, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 3px solid #4a7c4e;
+        }
+        
+        .meta-label {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.3rem;
+        }
+        
+        .meta-value {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
+        /* Quote block */
+        .quote-block {
+            background: rgba(74, 124, 78, 0.1);
+            border-left: 4px solid #4a7c4e;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+        
+        /* Campaign section */
+        .campaign-highlight {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #2c5530;
+            margin: 2rem 0;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, #2c5530 0%, #1a1a1a 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: #4a7c4e;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin: 0 0.5rem;
+        }
+        
+        .cta-primary:hover {
+            background: #3a6c3e;
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #4a7c4e;
+            border: 2px solid #4a7c4e;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+        }
+        
+        .cta-secondary:hover {
+            background: #4a7c4e;
+            color: white;
+        }
+        
+        footer {
+            background: #0d0d0d;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #2c5530;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .book-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .book-cover-large {
+                margin: 0 auto;
+            }
+            
+            .book-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">BACKSTABBERS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Map</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="#">Pre-Order</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h1>About Backstabbers</h1>
+        <p class="subtitle">A debut thriller that will make you think twice about your next wilderness hike—and your closest friends.</p>
+    </section>
+    
+    <div class="content-section">
+        <h2>The Book</h2>
+        
+        <div class="book-details">
+            <div class="book-cover-large">
+                [BOOK COVER IMAGE]
+                <!-- TODO: Replace with <img src="cover.jpg" alt="Backstabbers" style="width:100%; height:100%; object-fit:cover;"> -->
+            </div>
+            
+            <div class="book-info">
+                <h3>BACKSTABBERS</h3>
+                <p style="color: #4a7c4e; font-size: 1.2rem; margin-bottom: 1.5rem;">by Eliza Jabore</p>
+                
+                <div class="book-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Publisher</div>
+                        <div class="meta-value">Waterstones (Hachette UK)</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Publication Date</div>
+                        <div class="meta-value">June 2, 2026</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Format</div>
+                        <div class="meta-value">Hardback, eBook, Audio</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">ISBN</div>
+                        <div class="meta-value">9781408722251</div>
+                    </div>
+                </div>
+                
+                <p><strong>Pre-order now from:</strong></p>
+                <p>
+                    <a href="#" class="cta-secondary">Waterstones</a>
+                    <a href="#" class="cta-secondary">Amazon</a>
+                </p>
+            </div>
+        </div>
+        
+        <h3>Synopsis</h3>
+        <p><strong>Three friends. One podcast obsession. A trail that remembers.</strong></p>
+        
+        <p>Jade, Stef, and Zoe have been inseparable since college, bound by their shared love of true crime podcasts and weekend hikes. When they discover that the Bones Hollow Trail in Washington State was once the hunting ground of a serial killer who was never caught, they can't resist retracing his victims' final steps.</p>
+        
+        <p>What starts as a thrilling adventure quickly spirals into paranoia. Strange markers appear on trees. Their GPS fails. Someone—or something—is watching them. As tensions rise and old resentments surface, the friends realize the real danger might not be what's lurking in the woods.</p>
+        
+        <p>It might be each other.</p>
+        
+        <div class="quote-block">
+            "A masterfully claustrophobic thriller that explores the thin line between friendship and betrayal. Jabore's debut will have you checking over your shoulder long after the final page."
+        </div>
+        
+        <h3>For Fans Of:</h3>
+        <ul>
+            <li><em>The Ritual</em> by Adam Nevill</li>
+            <li><em>The Hunting Party</em> by Lucy Foley</li>
+            <li><em>Mexican Gothic</em> by Silvia Moreno-Garcia</li>
+            <li><em>In the Woods</em> by Tana French</li>
+        </ul>
+        
+        <h3>About the Author</h3>
+        <p><strong>Eliza Jabore</strong> is a debut novelist whose love of wilderness horror and psychological suspense culminated in <em>Backstabbers</em>. She holds an MFA in Creative Writing and has worked as a trail guide in the Pacific Northwest, experiences that deeply inform her atmospheric storytelling. She currently lives in the UK, where she continues to explore the darkest corners of human nature—preferably from the safety of her writing desk.</p>
+    </div>
+    
+    <div class="content-section" style="background: #1a1a1a; padding: 3rem 2rem;">
+        <h2>The Campaign</h2>
+        
+        <h3>What is the Geocaching Experience?</h3>
+        <p>To celebrate the launch of <em>Backstabbers</em>, we're bringing the story off the page and onto the trails. We've hidden 12 waterproof evidence boxes across the UK's most atmospheric hiking locations—from the Lake District to the Scottish Highlands.</p>
+        
+        <div class="campaign-highlight">
+            <h3 style="margin-top: 0;">What's Inside Each Box?</h3>
+            <ul>
+                <li><strong>Exclusive Chapter Excerpt:</strong> A non-spoiler scene printed on weathered paper</li>
+                <li><strong>"Evidence" Items:</strong> Polaroid photos, trail map fragments, podcast transcripts</li>
+                <li><strong>Character Artifacts:</strong> Missing persons flyers, handwritten notes</li>
+                <li><strong>Promotional Items:</strong> Bookmarks, QR codes to pre-order, #FindBackstabbers stickers</li>
+                <li><strong>Logbook:</strong> Sign your name and share what you'd do if you got lost</li>
+            </ul>
+        </div>
+        
+        <h3>Campaign Goals</h3>
+        <p>This geocaching experience aims to:</p>
+        <ul>
+            <li>Create an immersive, real-world extension of the book's atmosphere</li>
+            <li>Target the unique overlap between outdoor enthusiasts and thriller readers</li>
+            <li>Generate sustained user-generated content throughout summer 2026</li>
+            <li>Build anticipation for the June 2nd release through discovery and sharing</li>
+            <li>Reward early supporters with exclusive signed bookplates</li>
+        </ul>
+        
+        <h3>How to Participate</h3>
+        <p>Visit the <a href="index.html" style="color: #4a7c4e;">interactive map</a> to choose your location, solve the cryptic clues, and discover the hidden boxes. Share your finds on social media with <strong>#FindBackstabbers</strong> to join the community of seekers.</p>
+        
+        <p><strong>Important:</strong> This campaign follows Leave No Trace principles. All boxes are placed responsibly and will be collected after the campaign period. Please respect the environment and return items to their boxes for other seekers to discover.</p>
+    </div>
+    
+    <section class="cta-section">
+        <h2>Don't Just Find the Boxes—Read the Full Story</h2>
+        <p>The geocaching experience is just the beginning. Discover what really happened on Bones Hollow Trail.</p>
+        <p style="font-size: 1.5rem; color: #4a7c4e; margin-top: 1.5rem;"><strong>Out June 2, 2026</strong></p>
+        <div style="margin-top: 2rem;">
+            <a href="#" class="cta-primary">Pre-Order Now</a>
+            <a href="index.html" class="cta-secondary">Explore the Map</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>BACKSTABBERS by Eliza Jabore | Published by Waterstones | © 2026 Hachette UK</p>
+        <p style="margin-top: 0.5rem;">This is a fictional marketing campaign created for educational purposes.</p>
+    </footer>
+</body>
+</html>
