@@ -15,8 +15,38 @@ const locations = [
         region: 'Staffordshire',
         coords: [52.75130624095723, -1.9735328097757627],
         difficulty: 'Easy',
-        clue: 'Something something stepping stones',
+        clue: 'Beyond the pines, under the stepping stones, search near the Black Eyed Girl',
         found: 23,
+        status: 'Active'
+    },
+    {
+        id: 'BH-004',
+        name: 'Mam Tor Summit',
+        region: 'Peak District',
+        coords: [53.3583, -1.8167],
+        difficulty: 'Moderate',
+        clue: 'The broken road remembers. Search where the path crumbled.',
+        found: 28,
+        status: 'Active'
+    },
+   {
+        id: 'BH-008',
+        name: 'Cairngorms Forest',
+        region: 'Scottish Highlands',
+        coords: [57.0833, -3.6667],
+        difficulty: 'Easy',
+        clue: 'The ancient pines whisper secrets. Follow the red trail marker.',
+        found: 34,
+        status: 'Active'
+    },
+    {
+        id: 'BH-009',
+        name: 'Snowdon Ranger Path',
+        region: 'Snowdonia',
+        coords: [53.0685, -4.0762],
+        difficulty: 'Hard',
+        clue: 'Where legends climbed, beneath the ranger\'s stone.',
+        found: 11,
         status: 'Active'
     },
 ];
